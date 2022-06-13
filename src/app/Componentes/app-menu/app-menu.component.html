@@ -1,0 +1,50 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <li class="nav-item"> <a class="nav-link" routerLink="/home">
+      <mat-icon>home</mat-icon><span>Início</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu1">
+      <mat-icon>shopping_cart</mat-icon>
+      <span>Compras</span>
+    </a>
+    <div id="menu1" class="collapse">
+      <div class="bg-white collapse-inner rounded">
+        <a class="collapse-item" href="#">Listar Requisições</a>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu2">
+      <mat-icon>build</mat-icon>
+      <span>Utilidades</span>
+    </a>
+    <div id="menu2" class="collapse">
+      <div class="bg-white collapse-inner rounded">
+        <a class="collapse-item" href="#">Visualizar Notas Ficais</a> <a class="collapse-item"
+          routerLink="/listar-funcionarios">Funcionários</a>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu3">
+      <mat-icon>widgets</mat-icon>
+      <span>Ordem de Compra</span>
+    </a>
+    <div id="menu3" class="collapse">
+      <div class="bg-white collapse-inner rounded">
+        <a class="collapse-item" href="Cad_ordens.html">Criar Ordem de Compra</a>
+        <a class="collapse-item" href="List_ordens.html">Minhas Ordens</a>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item"> <a class="nav-link" routerLink="/listar-fornecedores">
+      <mat-icon>person</mat-icon>
+      <span>Fornecedores</span>
+    </a> </li>
+  <li class="nav-item"> <a class="nav-link" routerLink="/listar-produtos">
+      <mat-icon>edit</mat-icon>
+      <span>Produtos</span>
+    </a>
+  </li>
+</ul>

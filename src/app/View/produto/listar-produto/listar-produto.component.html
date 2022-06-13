@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="col-12">
+    <div class="card shadow">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-8">
+            <p class="font-weight-bold text-primary">PRODUTOS</p>
+          </div>
+          <div class="col-4"><a (click)="criarProduto()" class="btn btn-info btn-icon-split align-right"> <span class="icon">
+            <mat-icon>edit</mat-icon></span> <span class="text">Novo Produto</span> </a></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTableFornecedor" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let produto of produtos">
+                <td>{{ produto.id }}</td>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.descricao }}</td>
+                <td><a (click)="editarProdutoPorID(produto.id)" class="btn btn-info btn-icon-split align-right" title="Editar"><mat-icon> edit </mat-icon></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

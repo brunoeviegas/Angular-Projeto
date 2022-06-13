@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="col-12">
+    <div class="card shadow">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-9">
+            <h6 class="font-weight-bold text-primary">Fornecedores</h6>
+          </div>
+          <div class="col-3"><a (click)="EventoCriarFornecedor()" class="btn btn-info btn-icon-split"> <span class="icon">
+                <i class="fas fa-address-card"></i> </span> <span class="text">Novo Fornecedor</span> </a></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTableFornecedor" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Código do Fornecedor</th>
+                <th>Nome da Empresa</th>
+                <th>CNPJ</th>
+                <th>Edição</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>01</td>
+                <td>Papelaria 123</td>
+                <td></td>
+                <td><a href="#"> <i class="fas fa-fw fa-pencil-alt"></i></a></td>
+              </tr>
+              <tr>
+                <td>02</td>
+                <td>Distribuidora de Papéis</td>
+                <td></td>
+                <td><a href="#"> <i class="fas fa-fw fa-pencil-alt"></i></a></td>
+              </tr>
+              <tr>
+                <td>03</td>
+                <td>Distribuidora de Água</td>
+                <td></td>
+                <td><a href="#"> <i class="fas fa-fw fa-pencil-alt"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

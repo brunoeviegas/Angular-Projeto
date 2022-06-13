@@ -1,0 +1,18 @@
+<div id="content-wrapper">
+  <div id="content">
+    <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
+      <div class="input-group"> <span>Logo aqui </span>
+        <span>
+        </span>
+      </div>
+      <ul class="navbar-nav">
+        <div class="topbar-divider"></div>
+        <li class="nav-item"> <a class="nav-link dropdown-toggle" data-toggle="dropdown"> <span
+              class="text-center">Nome do Usuário: {{funcionario.nome}} <br> Função: {{funcionario.tipo}}</span> </a>
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"> <a
+              class="dropdown-item" (click)="editarPerfil()"> Perfil </a>
+            <a class="dropdown-item" (click)="desconectar()"> Desconectar </a>
+          </div>
+        </li>
+      </ul>
+    </nav>

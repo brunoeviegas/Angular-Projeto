@@ -1,0 +1,64 @@
+{
+  "funcionarios": [
+    {
+      "id": 1,
+      "nome": "Bruno Eduardo",
+      "cpf": "000.000.000-00",
+      "tipo": "Administrador",
+      "email": "bruno",
+      "senha": "teste",
+      "cep": "83702-050",
+      "numero": 3331,
+      "complemento": "casa"
+    },
+    {
+      "id": 2,
+      "nome": "João",
+      "cpf": "000.000.000-00",
+      "tipo": "Funcionário",
+      "email": "joao@joao.com",
+      "senha": "teste",
+      "cep": "83701-060",
+      "numero": 3331,
+      "complemento": "casa"
+    },
+    {
+      "id": 3,
+      "nome": "Maria",
+      "cpf": "123.123.123-00",
+      "tipo": "Funcionário",
+      "email": "maria@terra.com",
+      "senha": "teste",
+      "cep": "80010-110",
+      "numero": 3331,
+      "complemento": "casa"
+    }
+  ],
+  "Produtos": [
+    {
+      "id": 2,
+      "nome": "Folha Sulfite A4 - 500 folhas",
+      "descricao": "Preferecialmente marca Xamequinho"
+    },
+    {
+      "id": 4,
+      "nome": "Lápis de Cor ",
+      "descricao": "Faber Castell 24 cores"
+    },
+    {
+      "nome": "sdgsdg",
+      "descricao": "te\nstg\nst\nsgs\ngs\ngs\ngsdfdf\n\ndsf\ndf\nsdf\ns\nfsdf\ndf\n",
+      "id": 5
+    },
+    {
+      "nome": "teste",
+      "descricao": "tetete",
+      "id": 6
+    },
+    {
+      "nome": "fdsdsf",
+      "descricao": "dfsdf",
+      "id": 7
+    }
+  ]
+}

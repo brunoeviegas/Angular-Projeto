@@ -1,0 +1,11 @@
+<div *ngIf="userAutenticado == false">
+  <app-login></app-login>
+ </div>
+ <div *ngIf="userAutenticado == true">
+  <app-app-header></app-app-header>
+  <table>
+      <td class="col-2"><app-app-menu> </app-app-menu></td>
+      <td class="col-10"><app-app-body></app-app-body></td>
+  </table>
+  <app-app-footer> </app-app-footer>
+  </div>

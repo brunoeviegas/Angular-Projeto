@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="col-12">
+    <div class="card shadow">
+      <div class="card-header">
+        <p class="font-weight-bold text-primary">CADASTRO DE PRODUTOS</p>
+      </div>
+      <div class="card-body container">
+        <div class="col-12 text-center">
+          <form>
+            <div class="form-group row" *ngIf="produto.id != 0">
+              <div class="col-2">
+                <input type="number" disabled="disabled" class="form-control" id="idProduto" name="idProduto"
+                  placeholder="Identificador" [(ngModel)]="produto.id">
+              </div>
+              <div class="col-10" >
+                <input type="text" class="form-control" id="nome" name="nome"
+                  placeholder="Nome do Produto" required [(ngModel)]="produto.nome">
+              </div>
+            </div>
+            <div class="form-group row" *ngIf="produto.id == 0">
+              <div class="col-12">
+                <input type="text" class="form-control" id="nome" name="nome"
+                  placeholder="Nome do Produto" required="required" [(ngModel)]="produto.nome">
+                </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12">
+                <textarea class="form-control-desc" id="descricao" name="descricao"
+                  placeholder="Descrição do Produto" [(ngModel)]="produto.descricao"></textarea>
+              </div>
+            </div>
+
+            <div class="col-6 container">
+              <a (click)="salvarProduto()" class="btn btn-success btn-icon-split"> <span class="icon"> <mat-icon>check</mat-icon>
+                </span> <span class="text">Salvar</span></a>
+              <a *ngIf="produto.id != 0" (click)="excluirProduto(produto.id, 'Produto')" class="btn btn-danger btn-icon-split"> <span class="icon"> <mat-icon>close</mat-icon>
+                </span> <span class="text">Excluir</span> </a>
+              <a (click)="cancelarCriacao()" class="btn btn-warning btn-icon-split"> <span class="icon"> <mat-icon>rotate_left</mat-icon>
+                </span> <span class="text">Cancelar</span> </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

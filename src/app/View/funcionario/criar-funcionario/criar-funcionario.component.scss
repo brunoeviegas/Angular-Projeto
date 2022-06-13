@@ -1,0 +1,36 @@
+.form-control-cep {
+  display: inline-block;
+  width: 100%;
+  font-size: 0.8rem;
+  height: calc(1.5em + 0.75rem + 5px);
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6e707e;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #d1d3e2;
+  border-radius: 0.35rem 0 0 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control-cep:focus {
+  color: #6e707e;
+  background-color: #fff;
+  border-color: #bac8f3;
+  border-radius: 0.35rem 0 0 0.35rem;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+}
+
+.size{
+  width: 70%;
+}
+
+.btn-info-cep {
+  color: #fff;
+  width: 30%;
+  background-color: #36b9cc;
+  border-color: #36b9cc;
+  border-radius:  0 0.35rem 0.35rem 0;
+}

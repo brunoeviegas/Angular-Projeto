@@ -1,0 +1,40 @@
+<div class="container-fluid justify-content-center">
+  <div class="col-5 ">
+    <div class="card shadow">
+      <div class="card-header">
+        <h1 class="font-weight-bold text-primary text-center">Bem-Vindo! <br> Ateliê JakCosturas </h1>
+      </div>
+      <div class="card-body container">
+        <div class="col-12 text-center">
+          <div class="form-group row">
+            <div class="col-10 container">
+              <input type="email" class="form-control" name="email" [(ngModel)]="login.email" placeholder="Insira seu Email...">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-10 container">
+              <input type="password" class="form-control" name="senha" [(ngModel)]="login.senha" placeholder="Insira sua Senha...">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-10 container">
+            <select name="funcao" id="funcao" class="form-control" placeholder="Tipo de Usuário">
+              <option value="Funcionario">Funcionário</option>
+              <option value="Fornecedor">Fornecedor</option>
+            </select>
+
+            </div>
+          </div>
+          <hr>
+          <div class="form-group row">
+            <div class="col-6 container">
+              <a (click)="fazerLogin()" class="btn btn-info btn-icon-split"> <span class="icon"> <mat-icon>arrow_forward_ios</mat-icon>
+              </span> <span class="text">Acessar</span></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

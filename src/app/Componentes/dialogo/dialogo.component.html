@@ -1,0 +1,12 @@
+<h3 mat-dialog-title>Tem certeza que deseja excluir este item?</h3>
+
+<div class="container">
+  <button class="btn btn-danger btn-icon-split" (click)="excluirItem(data.id, data.tabela)">
+    <span class="icon"> <mat-icon>check</mat-icon> </span>
+    <span class="text">Sim</span>
+  </button>
+  <button mat-dialog-close class="btn btn-warning btn-icon-split" >
+    <span class="icon"> <mat-icon>close</mat-icon> </span>
+    <span class="text">Não</span>
+  </button>
+</div>
