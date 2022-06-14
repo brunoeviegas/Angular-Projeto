@@ -2,10 +2,14 @@
 
 Versão 13.2.5 do [Angular CLI](https://github.com/angular/angular-cli).
 
-Criação de CRUD utilizando API REST simulada
-Validação de Acesso com consulta ao DB.Json
-Reutilização de Componentes para Criação e Edição de Itens, com validação por ID
-Manipulação de Modals, Dialogs e Icons do Angular Materials
+Criação de CRUD utilizando API REST simulada.
+
+Validação de Acesso com consulta ao DB.Json.
+
+Reutilização de Componentes para Criação e Edição de Itens, com validação por ID.
+
+Manipulação de Modals, Dialogs e Icons do Angular Materials.
+
 
 ## Development server
 
