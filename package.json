@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "watchdb": "json-server --watch db.json --port 3000",
+    "bancoJS": "json-server --watch db.json --port 3000",
     "test": "ng test"
 
   },
