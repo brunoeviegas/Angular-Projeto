@@ -6,7 +6,7 @@ $(document).ready(function() {
   $('#dataTable').DataTable();
   $('#dataTableFornecedor').DataTable();
   $('#dataTableFuncionario').DataTable();
-
+  $('#dataTableProduto').DataTable();
 });
 
 (function (c) {

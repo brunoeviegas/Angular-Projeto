@@ -16,6 +16,7 @@ const routes: Routes = [
 
   { path: "listar-fornecedores", component: ListarFornecedorComponent },
   { path: "criar-fornecedor", component: CriarFornecedorComponent },
+  { path: "editar-fornecedor", component: CriarFornecedorComponent },
 
   { path: "listar-funcionarios", component: ListarFuncionarioComponent },
   { path: "criar-funcionario", component: CriarFuncionarioComponent },
@@ -27,10 +28,6 @@ const routes: Routes = [
 
   { path: "login", component: LoginComponent },
   { path: "home", component: HomeComponent },
-
- /* { path: "sistema", loadChildren: () => import('./Componentes/app-sistema/app-sistema.module').then(
-    (m) => m.AppSistemaModule
-  ),},*/
 
 ];
 

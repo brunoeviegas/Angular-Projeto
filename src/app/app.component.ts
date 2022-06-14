@@ -7,7 +7,7 @@ import { LoginService } from './Services/login.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Projeto Frontend 01';
+  title = 'Projeto Angular';
 }
 
 
