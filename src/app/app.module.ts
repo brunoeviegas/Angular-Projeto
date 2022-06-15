@@ -30,6 +30,7 @@ import { LoginService } from './Services/login.service';
 import { HomeComponent } from './View/home/home.component';
 import { AppFooterComponent } from './Componentes/app-footer/app-footer.component';
 import { AppBodyComponent } from './Componentes/app-body/app-body.component';
+import { ListarComponent } from './View/funcionario/listar/listar.component';
 
 
 
@@ -51,6 +52,7 @@ import { AppBodyComponent } from './Componentes/app-body/app-body.component';
     ListarProdutoComponent,
     DialogoComponent,
     HomeComponent,
+    ListarComponent,
   ],
   imports: [
     BrowserModule,
