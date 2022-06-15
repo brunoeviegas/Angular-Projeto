@@ -7,6 +7,7 @@ import { CriarFornecedorComponent } from './View/fornecedor/criar-fornecedor/cri
 import { ListarFornecedorComponent } from "./View/fornecedor/listar-fornecedor/listar-fornecedor.component";
 import { CriarFuncionarioComponent } from './View/funcionario/criar-funcionario/criar-funcionario.component';
 import { ListarFuncionarioComponent } from './View/funcionario/listar-funcionario/listar-funcionario.component';
+import { ListarComponent } from './View/funcionario/listar/listar.component';
 import { HomeComponent } from './View/home/home.component';
 import { LoginComponent } from './View/login/login.component';
 import { CriarProdutoComponent } from './View/produto/criar-produto/criar-produto.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: "criar-fornecedor", component: CriarFornecedorComponent },
   { path: "editar-fornecedor", component: CriarFornecedorComponent },
 
-  { path: "listar-funcionarios", component: ListarFuncionarioComponent },
+  //{ path: "listar-funcionarios", component: ListarFuncionarioComponent },
+  { path: "listar-funcionarios", component: ListarComponent },
   { path: "criar-funcionario", component: CriarFuncionarioComponent },
   { path: "editar-funcionario", component: CriarFuncionarioComponent },
 

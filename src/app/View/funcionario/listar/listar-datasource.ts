@@ -13,18 +13,17 @@ import { FuncionarioService } from 'src/app/Services/funcionario.service';
  */
 export class ListarDataSource extends DataSource<Funcionario> {
 
-  funcionarioService!: FuncionarioService
-  funcionarios: Funcionario[] = []
   data: Funcionario[] = []
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
-  constructor() {
+  constructor(private funcionarioService: FuncionarioService) {
 
     super( );
-    //this.funcionarios = this.funcionarioService.listarA()
-    console.log(this.data);
-    console.log(this.funcionarios);
+    this.funcionarioService.listar().subscribe(listaFuncionarios => {
+      this.data = listaFuncionarios;
+    })
+
   }
 
   connect(): Observable<Funcionario[]> {
@@ -64,7 +63,8 @@ export class ListarDataSource extends DataSource<Funcionario> {
     return data.sort((a, b) => {
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
-        case 'name': return compare(a.nome, b.nome, isAsc);
+        case 'nome': return compare(a.nome, b.nome, isAsc);
+        case 'tipo': return compare(a.tipo, b.tipo, isAsc);
         default: return 0;
       }
     });

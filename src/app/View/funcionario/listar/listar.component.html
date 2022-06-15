@@ -1,26 +1,50 @@
-<div class="mat-elevation-z8">
-  <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.nome}}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator #paginator
-      [length]="dataSource?.data?.length"
-      [pageIndex]="0"
-      [pageSize]="10"
-      [pageSizeOptions]="[5, 10, 20]"
-      aria-label="Select page">
-  </mat-paginator>
+<div class="container-fluid">
+  <div class="col-12">
+    <div class="card shadow">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-9">
+            <p class="font-weight-bold text-primary">FUNCIONÁRIOS</p>
+          </div>
+          <div class="col-3"><a (click)="criar()" class="btn btn-info btn-icon-split"> <span class="icon">
+                <mat-icon>edit</mat-icon>
+              </span> <span class="text">Novo Funcionário</span> </a></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table mat-table class="full-width-table" matSort aria-label="Elements">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>ID</th>
+              <td mat-cell *matCellDef="let funcionario">{{funcionario.id}}</td>
+            </ng-container>
+            <ng-container matColumnDef="nome">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+              <td mat-cell *matCellDef="let funcionario">{{funcionario.nome}}</td>
+            </ng-container>
+            <ng-container matColumnDef="tipo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Acesso</th>
+              <td mat-cell *matCellDef="let funcionario">{{funcionario.tipo}}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef>E-mail</th>
+              <td mat-cell *matCellDef="let funcionario">{{funcionario.email}}</td>
+            </ng-container>
+            <ng-container matColumnDef="opcao">
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let funcionario"><a (click)="editar(funcionario.id)"
+                  class="btn btn-info btn-icon-split align-right" title="Editar">
+                  <mat-icon> edit </mat-icon>
+                </a></td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="25"
+            [pageSizeOptions]="[10, 25, 50]" aria-label="Select page">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

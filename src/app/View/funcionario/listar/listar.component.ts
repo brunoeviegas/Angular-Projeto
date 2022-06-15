@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
@@ -11,22 +11,35 @@ import { ListarDataSource } from './listar-datasource';
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.scss']
 })
-export class ListarComponent implements AfterViewInit {
+export class ListarComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<Funcionario>;
   dataSource: ListarDataSource;
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'nome', 'tipo', 'email', 'opcao'];
 
   constructor(private funcionarioService: FuncionarioService,) {
-    this.dataSource = new ListarDataSource();
+    this.dataSource = new ListarDataSource(funcionarioService);
+  }
+
+  ngOnInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.table.dataSource = this.dataSource;
   }
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+  }
+
+  editar(id: any): void{
+    this.funcionarioService.editar(id).subscribe();
+  }
+  criar(): void
+  {
+    this.funcionarioService.criar();
   }
 }
