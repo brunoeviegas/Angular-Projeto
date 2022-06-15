@@ -13,6 +13,7 @@ export class CriarFuncionarioComponent implements OnInit {
 
 
   funcionario: Funcionario = {
+    id: 0,
     nome: '',
     cpf: '',
     tipo: '',

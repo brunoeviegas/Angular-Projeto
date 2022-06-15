@@ -118,4 +118,20 @@ export class FuncionarioService {
   retornarPagina(): void {
     this.router.navigate(['listar-funcionarios'])
   }
+
+  filtrar(filtro: string){
+    const consulta = `${this.UrlDB}?nome_like=${filtro}`
+    if (filtro != '' || filtro != null){
+      this.http.get<Funcionario[]>(consulta).subscribe(lista => {
+        this.lista = lista;
+
+      })
+    } else{
+      this.http.get<Funcionario[]>(this.UrlDB).subscribe(listaProdutos => {
+        this.lista = listaProdutos;
+      })
+
+    }
+    return this.lista
+  }
 }
