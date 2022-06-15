@@ -7,11 +7,50 @@
             <p class="font-weight-bold text-primary">FUNCIONÁRIOS</p>
           </div>
           <div class="col-3"><a (click)="criar()" class="btn btn-info btn-icon-split"> <span class="icon">
-            <mat-icon>edit</mat-icon> </span> <span class="text">Novo Funcionário</span> </a></div>
+                <mat-icon>edit</mat-icon>
+              </span> <span class="text">Novo Funcionário</span> </a></div>
         </div>
       </div>
       <div class="card-body">
         <div class="table-responsive">
+          <mat-table [dataSource]="funcionarios2" matSort class="table table-bordered">
+            <ng-container matColumnDef="ID">
+              <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+              <mat-cell *matCellDef="let funcionario">{{funcionario.id}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Nome">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Nome Completo </mat-header-cell>
+              <mat-cell *matCellDef="let funcionario">{{funcionario.nome}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Tipo">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de Acesso </mat-header-cell>
+              <mat-cell *matCellDef="let funcionario">{{funcionario.tipo}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Email">
+              <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
+              <mat-cell *matCellDef="let funcionario">{{funcionario.email}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Opcao">
+              <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+              <mat-cell *matCellDef="let funcionario">
+                <a (click)="editarProdutoPorID(funcionario.id)"
+                  class="btn btn-info btn-icon-split align-right" title="Editar">
+                  <mat-icon> edit </mat-icon>
+                </a></mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="carregando">
+              <mat-footer-cell *matFooterCellDef colspan ="5"> Carregando informações... </mat-footer-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="colunasTabela"></mat-header-row>
+            <mat-footer-row *matFooterRowDef="['carregando']" [ngClass]="{'hide':funcionarios!=null}"></mat-footer-row>
+            <mat-paginator [pageSizeOptions]="[2,10,25,50]" [pageSize]="2"></mat-paginator>
+            <mat-row *matRowDef="let row; columns: colunasTabela"></mat-row>
+
+          </mat-table>
+          <br> <span>aqui</span>
+        </div>
+        <div class="table-responsive">
+
           <table class="table table-bordered" id="dataTableFuncionario" width="100%" cellspacing="0">
             <thead>
               <tr>
@@ -28,12 +67,16 @@
                 <td>{{ funcionario.nome }}</td>
                 <td>{{ funcionario.tipo }}</td>
                 <td>{{ funcionario.email }}</td>
-                <td><a (click)="editarProdutoPorID(funcionario.id)" class="btn btn-info btn-icon-split align-right" title="Editar"><mat-icon> edit </mat-icon></a></td>
+                <td><a (click)="editarProdutoPorID(funcionario.id)" class="btn btn-info btn-icon-split align-right"
+                    title="Editar">
+                    <mat-icon> edit </mat-icon>
+                  </a></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+
     </div>
   </div>
 </div>

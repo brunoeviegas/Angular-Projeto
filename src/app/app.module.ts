@@ -8,6 +8,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog'
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,9 +31,7 @@ import { HomeComponent } from './View/home/home.component';
 import { AppFooterComponent } from './Componentes/app-footer/app-footer.component';
 import { AppBodyComponent } from './Componentes/app-body/app-body.component';
 
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+
 
 
 @NgModule({
@@ -62,6 +64,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatFormFieldModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
