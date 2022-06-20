@@ -1,38 +1,75 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTable } from '@angular/material/table';
 import { Funcionario } from 'src/app/Models/funcionario.model';
 import { FuncionarioService } from 'src/app/Services/funcionario.service';
-
+import { ListarFuncionarioDataSource } from './listar-funcionario-datasource';
 
 @Component({
   selector: 'app-listar-funcionario',
   templateUrl: './listar-funcionario.component.html',
   styleUrls: ['./listar-funcionario.component.scss']
 })
-export class ListarFuncionarioComponent implements OnInit {
+export class ListarFuncionarioComponent implements AfterViewInit, OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatTable) table!: MatTable<Funcionario>;
+  dataSource: ListarFuncionarioDataSource;
+  colunas = ['id', 'nome', 'tipo', 'email', 'opcao'];
 
-  funcionarios: Funcionario[] = [];
+    constructor(private funcionarioService: FuncionarioService,) {
+      this.dataSource = new ListarFuncionarioDataSource(funcionarioService);
+    }
 
-  constructor(private funcionarioService: FuncionarioService,
-    ) { }
+    ngOnInit(): void {
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
 
-  ngOnInit(): void {
-    this.listar()
-  }
+      this.renomearPaginador()
 
-  criar(): void
-  {
-    this.funcionarioService.criar();
-  }
+    }
 
-  listar(): void
-  {
-    this.funcionarioService.listar().subscribe(listaFuncionarios => {
-      this.funcionarios = listaFuncionarios;
-    })
-  }
+    ngAfterViewInit(): void {
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource;
 
-  editarProdutoPorID(id: any): void{
-    this.funcionarioService.editar(id).subscribe();
-  }
+      this.renomearPaginador()
+    }
 
+    renomearPaginador(){
+      this.paginator._intl.itemsPerPageLabel = 'Por Página'
+      this.paginator._intl.firstPageLabel = 'Primeira página'
+      this.paginator._intl.lastPageLabel = 'Última página'
+      this.paginator._intl.nextPageLabel = 'Proxima página'
+      this.paginator._intl.previousPageLabel = 'Página anterior'
+      this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number) => {
+        if (length === 0 || pageSize === 0) { return `0 de ${length}`; }
+        length = Math.max(length, 0);
+        const startIndex = page * pageSize;
+        const endIndex = startIndex < length ?
+            Math.min(startIndex + pageSize, length) :
+            startIndex + pageSize;
+        return `${startIndex + 1} - ${endIndex} de ${length}`;
+      };
+
+    }
+
+
+    editar(id: any): void{
+      this.funcionarioService.editar(id).subscribe();
+    }
+    criar(): void
+    {
+      this.funcionarioService.criar();
+    }
+
+    filtro(event: Event){
+      const filtro = (event.target as HTMLInputElement).value;
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.table.dataSource = this.dataSource.filtro(filtro)
+    }
 }
