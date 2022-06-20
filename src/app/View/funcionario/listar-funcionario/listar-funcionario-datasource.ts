@@ -30,6 +30,7 @@ export class ListarFuncionarioDataSource extends DataSource<Funcionario> {
       throw Error('Please set the paginator and sort on the data source before connecting.');
     }
   }
+
   disconnect(): void {}
 
   private getPagedData(data: Funcionario[]): Funcionario[] {
@@ -56,6 +57,7 @@ export class ListarFuncionarioDataSource extends DataSource<Funcionario> {
       }
     });
   }
+
   filtro(filtro: string): Funcionario[] {
     filtro = filtro.trim().toLowerCase();
     this.data = this.funcionarioService.filtrar(filtro);
