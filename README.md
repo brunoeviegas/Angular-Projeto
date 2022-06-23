@@ -4,7 +4,7 @@ Versão 13.2.5 do [Angular CLI](https://github.com/angular/angular-cli).
 
 Criação de CRUD utilizando API REST simulada.
 
-Validação de Acesso com consulta ao DB.Json.
+Validação de Acesso com consulta ao DB.Json. (Rodar o comando `npm run bancoJS` conforme script criado no package.json)
 
 Reutilização de Componentes para Criação e Edição de Itens, com validação por ID.
 

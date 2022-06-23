@@ -27,8 +27,6 @@ export class ListarFuncionarioComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
-
-    //this.renomearPaginador()
   }
 
   ngAfterViewInit(): void {
@@ -72,6 +70,5 @@ export class ListarFuncionarioComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
 
-    //this.renomearPaginador()
   }
 }
